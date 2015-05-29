@@ -1,1 +1,2 @@
-web: gunicorn routes:app
+web: npm start
+webpackdev: npm run dev
