@@ -2,7 +2,7 @@
 
 Production-ready, one-click deployable boilerplate for [React](http://facebook.github.io/react/), [Webpack](http://webpack.github.io/), [Flask](http://flask.pocoo.org/) and [PostgreSQL](http://www.postgresql.org/).
 
-## One-Click Production Deployment
+## One-click production deployment
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/alexkuz/flask-react-boilerplate)
 
