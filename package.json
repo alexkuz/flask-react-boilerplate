@@ -7,8 +7,7 @@
     "test": "NODE_ENV=test BABEL_JEST_STAGE=0 jest",
     "dist": "NODE_ENV=production webpack -p",
     "dev": "NODE_ENV=production DEV_HTML=1 webpack && ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "initdb": "python server/initdb.py",
-    "postinstall": "npm run initdb && npm run dist"
+    "postinstall": "npm run dist"
   },
   "repository": {
     "type": "git",
