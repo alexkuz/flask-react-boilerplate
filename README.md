@@ -57,7 +57,7 @@ pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
 Create database tables:
 
 ```
-python server/initdb.py
+foreman run python server/initdb.py
 ```
 
 Finally, start local server:
