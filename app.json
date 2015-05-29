@@ -25,5 +25,8 @@
       "description": "Be default heroku is not installing `devDependencies`, so let's do that.",
       "value": "false"
     }
+  },
+  "scripts": {
+    "postdeploy": "python server/initdb.py"
   }
 }
