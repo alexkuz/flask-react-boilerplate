@@ -3,13 +3,17 @@
   "version": "0.0.1",
   "description": "Flask React Boilerplate",
   "scripts": {
-    "start": "gunicorn $GUNICORN_PARAMS --chdir server routes:app",
+    "start": "gunicorn $GUNICORN_PARAMS --chdir server entry:app",
     "test": "NODE_ENV=test BABEL_JEST_STAGE=0 jest",
     "dist": "NODE_ENV=production webpack -p",
-    "dev": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "postinstall": "npm run dist"
+    "dev": "NODE_ENV=production DEV_HTML=1 webpack && ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "initdb": "python server/initdb.py",
+    "postinstall": "npm run initdb && npm run dist"
   },
-  "repository": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexkuz/flask-react-boilerplate.git"
+  },
   "engines": {
     "node": "0.10",
     "npm": "2.10"

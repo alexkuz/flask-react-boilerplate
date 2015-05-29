@@ -1,14 +1,11 @@
+# -*- coding: utf-8 -*-
 import os
-from flask import Flask, render_template
+from flask import render_template, Blueprint
 
-app = Flask(__name__)
+index_view = Blueprint('index', __name__)
 
-
-@app.route('/')
+@index_view.route('/')
 def index():
     is_dev = os.environ.get('NODE_ENV') == 'development'
 
     return render_template('index.html' if not is_dev else 'index.dev.html')
-
-if __name__ == '__main__':
-    app.run()
