@@ -15,6 +15,7 @@
   "website": "https://github.com/alexkuz/flask-react-boilerplate",
   "logo": "http://i.imgur.com/ydf7myp.png",
   "env": {
+    "BUILDPACK_URL": "https://github.com/ddollar/heroku-buildpack-multi",
     "NODE_ENV": {
       "description": "Set the `NODE_ENV` environment variable to `production` to disable debugging etc.",
       "value": "production"
