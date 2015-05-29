@@ -36,7 +36,9 @@ Setup python environment and install dependencies:
 
 ```
 virtualenv venv
+
 source venv/bin/activate     # or venv/bin/activate.fish or whatever
+
 pip install -r requirements.txt
 ```
 
@@ -62,6 +64,7 @@ Finally, start local server:
 
 ```
 foreman start
+
 open http://localhost:3001
 ```
 
