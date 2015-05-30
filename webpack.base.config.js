@@ -1,32 +1,13 @@
 var webpack = require('webpack');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 
-var path = require('path');
-var assign = require('lodash/object/assign');
-
-var _env = process.env.NODE_ENV;
-
-var env = {
-  production: _env === 'production',
-  staging: _env === 'staging',
-  test: _env === 'test',
-  development: _env === 'development' || typeof _env === 'undefined'
-};
-
-assign(env, {
-  build: (env.production || env.staging)
-});
+var SCRIPTS_PATH = 'server/static/scripts';
+var TEMPLATES_PATH = 'server/templates';
 
 module.exports = {
   target: 'web',
 
-  entry: './client/entry',
-
-  output: {
-    path: path.join(process.cwd(), '/client'),
-    pathInfo: true,
-    publicPath: 'http://localhost:3000/client/',
-    filename: 'main.js'
-  },
+  entry: ['./client/entry'],
 
   resolve: {
     modulesDirectories: [
@@ -38,11 +19,9 @@ module.exports = {
   },
 
   plugins: [
+    new CleanWebpackPlugin([SCRIPTS_PATH, TEMPLATES_PATH]),
     new webpack.DefinePlugin({
-      __DEV__: env.development,
-      __STAGING__: env.staging,
-      __PRODUCTION__: env.production,
-      __CURRENT_ENV__: "'" + (_env) + "'"
+      NODE_ENV: process.env.NODE_ENV
     })
   ],
 
