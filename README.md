@@ -6,6 +6,10 @@ Production-ready, one-click deployable boilerplate for [React](http://facebook.g
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/alexkuz/flask-react-boilerplate)
 
+This is what you will get:
+
+https://flask-react-boilerplate.herokuapp.com/
+
 ## Local installation
 
 You'll neel a little more than one click.
