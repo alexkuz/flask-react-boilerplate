@@ -18,6 +18,12 @@ class KittensAPI(Resource):
     @staticmethod
     def post():
         from app import db
+
+        count = Kitten.query.count()
+
+        if count >= 9:
+            return 'This basket is full of kittens!', 403
+
         new_kitten = Kitten()
         db.session.add(new_kitten)
         db.session.commit()

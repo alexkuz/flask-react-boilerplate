@@ -20,13 +20,24 @@ export class KittenStore extends Store {
     super();
 
     const fundActions = flux.getActions('kittens');
-    this.register(fundActions.requestKittens, this.handleRequestKittens);
-    this.register(fundActions.addKitten, this.handleAddKitten);
-    this.register(fundActions.deleteKitten, this.handleDeleteKitten);
+    this.registerAsync(fundActions.requestKittens, null, this.handleRequestKittens, this.handleError);
+    this.registerAsync(fundActions.addKitten, null, this.handleAddKitten, this.handleError);
+    this.registerAsync(fundActions.deleteKitten, null, this.handleDeleteKitten, this.handleError);
 
     this.state = {
       kittens: []
     };
+  }
+
+  handleError(err) {
+    console.error(err);
+    /* eslint-disable no-alert */
+    window.alert(`
+      status: ${err.response.statusText}
+
+      message: ${err.response.body}
+    `);
+    /* eslint-enable no-alert */
   }
 
   handleRequestKittens(kittens) {
