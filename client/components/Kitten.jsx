@@ -20,28 +20,31 @@ const SVG = `
 `;
 
 const STYLES = {
-  'kitten': {
-    'text-decoration': 'none',
-    'display': 'flex',
-    'flex-direction': 'column',
-    'flex-basis': '33%',
-    'padding': '0.5rem',
-    'box-sizing': 'border-box'
+  kitten: {
+    textDecoration: 'none',
+    display: 'flex',
+    flexDirection: 'column',
+    flexBasis: '33%',
+    padding: '0.5rem',
+    boxSizing: 'border-box'
   },
-  'button': {
-    'padding': '1rem 1.5rem',
-    'background': '#FFAAAA',
-    'border': '0',
-    'border-radius': '0.5rem',
-    'cursor': 'pointer',
-    'text-align': 'center',
-    'user-select': 'none'
+  button: {
+    padding: '1rem 1.5rem',
+    background: '#FFAAAA',
+    '&:hover': {
+      background: '#FFBBBB'
+    },
+    border: 0,
+    borderRadius: '0.5rem',
+    cursor: 'pointer',
+    textAlign: 'center',
+    userSelect: 'none'
   },
-  'info': {
-    'display': 'flex',
-    'flex-direction': 'row',
-    'justify-content': 'space-between',
-    'align-items': 'center'
+  info: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
   }
 };
 
@@ -62,7 +65,7 @@ export default class Kitten extends Component {
 
   render() {
     const { sheet: { classes } } = this.props;
-    const style = {'color': COLORS[this.props.kitten.id % 8], 'fill': 'currentColor'};
+    const style = { color: COLORS[this.props.kitten.id % 8], fill: 'currentColor' };
 
     return (
       <div className={classes.kitten}>

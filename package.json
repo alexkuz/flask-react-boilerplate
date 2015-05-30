@@ -33,6 +33,10 @@
   "dependencies": {
     "flummox": "3.5.2",
     "jss": "1.0.8",
+    "jss-camel-case": "0.1.1",
+    "jss-nested": "0.1.7",
+    "jss-px": "0.1.2",
+    "jss-vendor-prefixer": "0.2.1",
     "lodash": "3.9.3",
     "react": "0.13.3",
     "react-jss": "1.0.0",

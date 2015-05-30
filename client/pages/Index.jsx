@@ -6,13 +6,13 @@ import Kittens from '../components/Kittens';
 
 const STYLES = {
   index: {
-    'width': '100%',
-    'height': '100%',
-    'display': 'flex',
-    'align-items': 'center',
-    'justify-content': 'center',
-    'background-color': '#FFDDDD',
-    'color': '#660000'
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FFDDDD',
+    color: '#660000'
   }
 };
 

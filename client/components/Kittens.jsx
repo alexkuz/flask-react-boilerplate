@@ -4,36 +4,39 @@ import useSheet from 'react-jss';
 
 const STYLES = {
   credits: {
-    'font-size': '10px'
+    fontSize: 10
   },
 
-  'link': {
-    'text-decoration': 'none'
+  link: {
+    textDecoration: 'none'
   },
 
-  'basket': {
-    'display': 'flex',
-    'flex-direction': 'row',
-    'align-self': 'stretch',
-    'flex-wrap': 'wrap'
+  basket: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignSelf: 'stretch',
+    flexWrap: 'wrap'
   },
 
-  'kittens': {
-    'display': 'flex',
-    'flex-direction': 'column',
-    'align-items': 'center',
-    'width': '60%'
+  kittens: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '60%'
   },
 
-  'button': {
-    'padding': '1rem 1.5rem',
-    'background': '#FFAAAA',
-    'border': '0',
-    'border-radius': '0.5rem',
-    'cursor': 'pointer',
-    'margin': '2rem',
-    'text-align': 'center',
-    'user-select': 'none'
+  button: {
+    padding: '1rem 1.5rem',
+    background: '#FFAAAA',
+    '&:hover': {
+      background: '#FFBBBB'
+    },
+    border: 0,
+    borderRadius: '0.5rem',
+    cursor: 'pointer',
+    margin: '2rem',
+    textAlign: 'center',
+    userSelect: 'none'
   }
 };
 
