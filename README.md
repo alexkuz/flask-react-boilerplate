@@ -76,4 +76,4 @@ open http://localhost:3001
 
 Copyright 2015, Alexander Kuznetsov &lt;alexkuz@gmail.com&gt;
 
-This boilerplate is based on [**React Flask Boilerplate**](https://github.com/srn/react-webpack-boilerplate): MIT © [Søren Brokær](http://srn.io)
+This boilerplate is based on [**React Webpack Boilerplate**](https://github.com/srn/react-webpack-boilerplate): MIT © [Søren Brokær](http://srn.io)
