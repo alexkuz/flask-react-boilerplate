@@ -2,9 +2,7 @@
 
 Production-ready, one-click deployable boilerplate for [React](http://facebook.github.io/react/), [Webpack](http://webpack.github.io/), [Flask](http://flask.pocoo.org/) and [PostgreSQL](http://www.postgresql.org/).
 
-## Deploy on Heroku
-
-Deploy it with one click on Heroku:
+## One-click production deployment
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/alexkuz/flask-react-boilerplate)
 
@@ -71,11 +69,11 @@ open http://localhost:3001
 ## What do we have here?
 
 - A basket of kittens 🐱
-- Simple Flask **API**, powered with [**Flask-RESTful**](https://flask-restful.readthedocs.org/en/0.3.3/), [**SQLAlchemy**](http://www.sqlalchemy.org/) and [**PostrgreSQL**](http://www.postgresql.org/)
+- Simple Flask **API**, powered with [**Flask-RESTful**](https://flask-restful.readthedocs.org/en/0.3.3/), [**SQLAlchemy**](http://www.sqlalchemy.org/) and [**PostgreSQL**](http://www.postgresql.org/)
 - **UI**, powered with [**React**](http://facebook.github.io/react/), [**Babel**](https://babeljs.io/), [**Webpack**](http://webpack.github.io/) and [**React Hot Loader**](https://github.com/gaearon/react-hot-loader)
 
 ## License
 
 Copyright 2015, Alexander Kuznetsov &lt;alexkuz@gmail.com&gt;
 
-This boilerplate is based on [**React Flask Boilerplate**](https://github.com/srn/react-webpack-boilerplate): MIT © [Søren Brokær](http://srn.io)
+This boilerplate is based on [**React Webpack Boilerplate**](https://github.com/srn/react-webpack-boilerplate): MIT © [Søren Brokær](http://srn.io)
