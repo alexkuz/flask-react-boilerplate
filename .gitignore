@@ -89,3 +89,4 @@ venv/
 
 server/static/scripts/
 server/templates/
+dev/

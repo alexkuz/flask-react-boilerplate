@@ -5,10 +5,15 @@ var webpack = require('webpack');
 var config = require('./webpack.base.config.js');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+var CleanWebpackPlugin = require('clean-webpack-plugin');
+
 var SCRIPTS_PATH = 'server/static/scripts';
+var TEMPLATES_PATH = 'server/templates';
 
 config = update(config, {
   bail: { $set: true },
+
+  entry: { $set: ['./client/entry'] },
 
   debug: { $set: false },
 
@@ -27,8 +32,9 @@ config = update(config, {
 
   plugins: {
     $push: [
+      new CleanWebpackPlugin([SCRIPTS_PATH, TEMPLATES_PATH]),
       new webpack.optimize.DedupePlugin(),
-      new webpack.optimize.UglifyJsPlugin({ output: {comments: false} }),
+      new webpack.optimize.UglifyJsPlugin({ output: { comments: false } }),
       new HtmlWebpackPlugin({
         inject: true,
         filename: '../../templates/index.html',
@@ -40,7 +46,7 @@ config = update(config, {
   module: {
     loaders: {
       $push: [
-        { test: /\.jsx?$/, loaders: ['babel?stage=0&optional=runtime'], exclude: /node_modules/ }
+        { test: /\.jsx?$/, loaders: ['babel'], exclude: /node_modules/ }
       ]
     }
   }

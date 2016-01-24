@@ -59,13 +59,13 @@ pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
 Create database tables:
 
 ```
-foreman run python server/initdb.py
+heroku local initdb
 ```
 
 Finally, start local server:
 
 ```
-foreman start
+heroku local web
 
 open http://localhost:3001
 ```
@@ -74,7 +74,7 @@ open http://localhost:3001
 
 - A basket of kittens 🐱
 - Simple Flask **API**, powered with [**Flask-RESTful**](https://flask-restful.readthedocs.org/en/0.3.3/), [**SQLAlchemy**](http://www.sqlalchemy.org/) and [**PostgreSQL**](http://www.postgresql.org/)
-- **UI**, powered with [**React**](http://facebook.github.io/react/), [**Babel**](https://babeljs.io/), [**Webpack**](http://webpack.github.io/) and [**React Hot Loader**](https://github.com/gaearon/react-hot-loader)
+- **UI**, powered with [**React**](http://facebook.github.io/react/), [**Babel**](https://babeljs.io/), [**Webpack**](http://webpack.github.io/) and [**React Transform HMR**](https://github.com/gaearon/react-transform-hmr)
 
 ## License
 

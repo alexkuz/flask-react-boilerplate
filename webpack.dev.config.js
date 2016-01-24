@@ -10,11 +10,11 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 if (process.env.NODE_ENV !== 'test') {
   config = update(config, {
     entry: {
-      $splice: [[
-        0, 0,
+      $set: [
         'webpack-dev-server/client?http://localhost:3000',
-        'webpack/hot/dev-server'
-      ]]
+        'webpack/hot/dev-server',
+        './client/entry'
+      ]
     }
   });
 }
@@ -28,9 +28,9 @@ config = update(config, {
 
   output: {
     $set: {
-      path: path.join(process.cwd(), '/client'),
+      path: path.join(process.cwd(), '/dev/static/scripts'),
       pathInfo: true,
-      publicPath: 'http://localhost:3000/client/',
+      publicPath: 'http://localhost:3000/static/scripts/',
       filename: 'main.js'
     }
   },
@@ -40,28 +40,28 @@ config = update(config, {
       new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
         inject: true,
-        filename: 'server/templates/index.html',
+        filename: 'dev/index.html',
         template: 'client/views/index.tpl'
       }),
-      new ExportFilesWebpackPlugin('server/templates/index.html')
+      new ExportFilesWebpackPlugin('dev/index.html')
     ]
   },
 
   module: {
     loaders: {
       $push: [
-        { test: /\.jsx?$/, loaders: [ 'react-hot', 'babel?stage=0&optional=runtime' ], exclude: /node_modules/ }
+        { test: /\.jsx?$/, loaders: [ 'babel' ], exclude: /node_modules/ }
       ]
     }
   },
 
   devServer: {
     $set: {
-      publicPath: 'http://localhost:3000/client/',
+      publicPath: '/static/scripts/',
 
       port: 3000,
 
-      contentBase: './client/',
+      contentBase: './dev',
 
       inline: true,
 
@@ -76,6 +76,10 @@ config = update(config, {
       headers: {
         'Access-Control-Allow-Origin': 'http://localhost:3001',
         'Access-Control-Allow-Headers': 'X-Requested-With'
+      },
+
+      proxy: {
+        '/api/*': 'http://localhost:3001'
       }
     }
   }

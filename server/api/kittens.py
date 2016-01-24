@@ -22,18 +22,16 @@ class KittensAPI(Resource):
         count = Kitten.query.count()
 
         if count >= 9:
-            return 'This basket is full of kittens!', 403
+            return { 'error': 'This basket is full of kittens!' }, 403
 
         new_kitten = Kitten()
         db.session.add(new_kitten)
         db.session.commit()
 
-        kittens = Kitten.query
-        return [{
-            'id': kitten.id,
-            'created': kitten.created.isoformat() + 'Z'
-        } for kitten in kittens]
-
+        return {
+            'id': new_kitten.id,
+            'created': new_kitten.created.isoformat() + 'Z'
+        }
 
 @kittens_api.resource('/kittens/<int:kitten_id>')
 class KittenAPI(Resource):
@@ -44,8 +42,4 @@ class KittenAPI(Resource):
         db.session.delete(kitten)
         db.session.commit()
 
-        kittens = Kitten.query
-        return [{
-            'id': kitten.id,
-            'created': kitten.created.isoformat() + 'Z'
-        } for kitten in kittens]
+        return None, 204

@@ -1,13 +1,7 @@
 var webpack = require('webpack');
-var CleanWebpackPlugin = require('clean-webpack-plugin');
-
-var SCRIPTS_PATH = 'server/static/scripts';
-var TEMPLATES_PATH = 'server/templates';
 
 module.exports = {
   target: 'web',
-
-  entry: ['./client/entry'],
 
   resolve: {
     modulesDirectories: [
@@ -19,7 +13,6 @@ module.exports = {
   },
 
   plugins: [
-    new CleanWebpackPlugin([SCRIPTS_PATH, TEMPLATES_PATH]),
     new webpack.DefinePlugin({
       NODE_ENV: process.env.NODE_ENV
     })
@@ -30,7 +23,9 @@ module.exports = {
       { test: /\.js$/, loader: 'eslint-loader', exclude: /node_modules/ }
     ],
 
-    loaders: [],
+    loaders: [
+      { test: /\.svg$/, loaders: ['babel', 'react-svg'] }
+    ],
 
     noParse: /\.min\.js/
   }

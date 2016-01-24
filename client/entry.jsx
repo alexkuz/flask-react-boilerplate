@@ -1,16 +1,36 @@
 'use strict';
+import 'babel-polyfill';
 
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Index from './pages/Index';
 import jss from 'jss';
-import JSSVendorPrefixer from 'jss-vendor-prefixer';
-import JSSPx from 'jss-px';
-import JSSNested from 'jss-nested';
-import JSSCamelCase from 'jss-camel-case';
+import jssVendorPrefixer from 'jss-vendor-prefixer';
+import jssPx from 'jss-px';
+import jssNested from 'jss-nested';
+import jssCamelCase from 'jss-camel-case';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import reducers from './reducers';
+import thunk from 'redux-thunk';
+import createLogger from 'redux-logger';
+import promise from 'redux-promise';
 
-jss.use(JSSVendorPrefixer);
-jss.use(JSSPx);
-jss.use(JSSNested);
-jss.use(JSSCamelCase);
+jss.use(jssVendorPrefixer());
+jss.use(jssPx());
+jss.use(jssNested());
+jss.use(jssCamelCase());
 
-React.render(<Index />, document.body);
+const createStoreWithMiddleware = applyMiddleware(
+  thunk,
+  promise,
+  createLogger()
+)(createStore);
+const store = createStoreWithMiddleware(reducers);
+
+ReactDOM.render(
+  <Provider store={store}>
+    <Index />
+  </Provider>,
+  document.getElementById('root')
+);
