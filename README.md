@@ -4,7 +4,7 @@ Production-ready, one-click deployable boilerplate for [React](http://facebook.g
 
 ## One-click production deployment
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/alexkuz/flask-react-boilerplate)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/patrickxie/flask-react-boilerplate)
 
 This is what you will get:
 
