@@ -90,3 +90,7 @@ venv/
 server/static/scripts/
 server/templates/
 dev/
+
+# OS generated files
+.DS_Store
+Desktop.ini
